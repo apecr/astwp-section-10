@@ -20,7 +20,7 @@ Feature: Test correct content
   Scenario: User can create new posts
     Given I am on the new post page
     When I enter "Test Post" in the "title" field
-    And I enter "Test Content" int the "content" field
+    And I enter "Test Content" in the "content" field
     And I press the submit button
     Then I am on the blog page
     Given I wait for the posts to load

@@ -1,6 +1,7 @@
 from behave import *
 
 from tests.acceptance.page_model.base_page import BasePage
+from tests.acceptance.page_model.new_post_page import NewPostPage
 
 use_step_matcher('re')
 
@@ -14,3 +15,15 @@ def step_impl(context, link_text):
         matching_links[0].click()
     else:
         raise RuntimeError('The {} link does not exist'.format(link_text))
+
+
+@when('I enter "(.*)" in the "(.*)" field')
+def step_impl(context, content, field_name):
+    page = NewPostPage(context.driver)
+    page.form_field(name=field_name).send_keys(content)
+
+
+@step("I press the submit button")
+def step_impl(context):
+    page = NewPostPage(context.driver)
+    page.submit_button.click()
