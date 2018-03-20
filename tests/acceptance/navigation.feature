@@ -4,10 +4,10 @@ Feature: Test navigation between pages
 
   Scenario: Homepage can go to Blog
     Given I am on the home page
-    When I clock on the link with id "blog-link"
+    When I clock on the "Go to blog" link
     Then I am on the blog page
 
   Scenario: Blog can go to homepage
     Given I am on the blog page
-    When I clock on the link with id "home-link"
+    When I clock on the "Go to home" link
     Then I am on the home page
