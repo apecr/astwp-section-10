@@ -9,6 +9,6 @@ use_step_matcher("re")
 
 @given("I wait for the posts to load")
 def step_impl(context):
-    WebDriverWait(context.driver, 10).until(
+    WebDriverWait(context.driver, 5).until(
         expected_conditions.visibility_of_element_located(BlogPageLocators.POSTS_SECTION)
     )
